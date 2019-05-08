@@ -7,6 +7,7 @@ import {
 } from '../actions/HomeActions';
 import constants from '../../../../constants';
 import ArticleRowComponent from '../../../common/ArticleRowComponent';
+import YoutubeRowComponent from '../../../common/YoutubeRowComponent';
 
 class FeedComponent extends Component {
   constructor(props) {
@@ -30,10 +31,10 @@ class FeedComponent extends Component {
         );
       case 'YOUTUBE':
         return (
-          // <YoutubeRowComponent
-          //   youtubeItem={item}
-          // />
-          null
+          <YoutubeRowComponent
+            key={item.id}
+            youtubeItem={item}
+          />
         );
     }
     return (

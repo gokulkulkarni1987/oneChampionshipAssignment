@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Card } from 'react-native-elements';
-import { Buffer } from 'buffer';
 import moment from 'moment';
 import OCImageView from './OCImageView';
 
