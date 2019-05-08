@@ -4,6 +4,8 @@ import {
 } from 'react-native';
 import HeaderComponent from '../../../HeaderComponent';
 import UpComingEventComponent from './UpComingEventComponent';
+import FeedComponent from './FeedComponent';
+import { GREY_BG_COLOR } from '../../../../res/values/colors';
 
 class HomeComponent extends Component {
 
@@ -27,9 +29,14 @@ class HomeComponent extends Component {
     return (
       <ScrollView
         nestedScrollEnabled={true}
+        style={{
+          backgroundColor: GREY_BG_COLOR
+        }}
       >
         <UpComingEventComponent
         />
+
+        <FeedComponent/>
       </ScrollView>
     )
   }
