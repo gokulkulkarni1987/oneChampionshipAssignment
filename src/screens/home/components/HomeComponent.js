@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import {
-  View,
-  Text
+  View
 } from 'react-native';
 import HeaderComponent from '../../../HeaderComponent';
-
+import UpComingEventComponent from './UpComingEventComponent';
 
 class HomeComponent extends Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   static navigationOptions = (props) => {
     return {
       header: 
@@ -15,10 +19,15 @@ class HomeComponent extends Component {
         />,
     }
   }
+
+  fetchHomeDetails() {
+  }
+
   render() {
     return (
       <View>
-        <Text>This is my app</Text>
+        <UpComingEventComponent
+        />
       </View>
     )
   }
