@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View
+  ScrollView
 } from 'react-native';
 import HeaderComponent from '../../../HeaderComponent';
 import UpComingEventComponent from './UpComingEventComponent';
@@ -25,10 +25,12 @@ class HomeComponent extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView
+        nestedScrollEnabled={true}
+      >
         <UpComingEventComponent
         />
-      </View>
+      </ScrollView>
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import {
   fetchUpcomingEvent
@@ -7,6 +7,7 @@ import {
 import constants from '../../../../constants';
 import OCSpinner from '../../../common/OCSpinner';
 import { Text } from 'react-native-elements';
+import UpcomingEvent from '../../../common/UpcomingEvent';
 
 class UpComingEventComponent extends Component {
 
@@ -19,6 +20,14 @@ class UpComingEventComponent extends Component {
     this.props.fetchUpcomingEvent();
   }
 
+  renderItem({ item }) {
+    return (
+      <UpcomingEvent
+        event={item}
+      />
+    );
+  }
+
   renderViewDependingOnState() {
     switch(this.props.viewType) {
       case constants.VIEW_TYPE.PROGRESS_VIEW:
@@ -29,9 +38,10 @@ class UpComingEventComponent extends Component {
         );
       case constants.VIEW_TYPE.MAIN_VIEW:
         return (
-          <View>
-            <Text>main view encountered</Text>
-          </View>
+          <FlatList
+            data={this.props.upcomingEvent}
+            renderItem={this.renderItem}
+          />
         )
     }
   }
