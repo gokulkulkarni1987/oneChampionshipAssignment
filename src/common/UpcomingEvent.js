@@ -6,11 +6,9 @@ import moment from 'moment';
 
 const screenWidth = Dimensions.get('window').width;
 export default UpcomingEvent = (props) => {
-  console.log('this is the event: ', props);
-    const eventDate = moment(props.event.startTime);
-    const currentDate = moment(new Date());
-    const timeRemaining = eventDate.diff(currentDate, 'seconds');
-    console.log('time remaining: ', timeRemaining);
+  const eventDate = moment(props.event.startTime);
+  const currentDate = moment(new Date());
+  const timeRemaining = eventDate.diff(currentDate, 'seconds');
   return (
     <View>
       <OCImageView
@@ -40,5 +38,5 @@ export default UpcomingEvent = (props) => {
         }}
       />
     </View>
-  )
+  );
 }
