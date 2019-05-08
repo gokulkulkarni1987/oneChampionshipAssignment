@@ -20,7 +20,6 @@ class FeedComponent extends Component {
   }
 
   renderItem({ item }) {
-    console.log('this is the item to be rendered: ', item);
     switch(item.type)  {
       case 'ARTICLE':
         return (
