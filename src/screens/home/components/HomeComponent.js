@@ -13,14 +13,14 @@ class HomeComponent extends Component {
     super(props);
   }
 
-  static navigationOptions = (props) => {
-    return {
-      header: 
-        <HeaderComponent
-          {...props}
-        />,
-    }
-  }
+  // static navigationOptions = (props) => {
+  //   return {
+  //     header: 
+  //       <HeaderComponent
+  //         {...props}
+  //       />,
+  //   }
+  // }
 
   fetchHomeDetails() {
   }

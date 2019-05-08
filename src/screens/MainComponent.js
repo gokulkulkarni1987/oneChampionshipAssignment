@@ -13,13 +13,14 @@ const mainNav = createStackNavigator(
     MainNav: { screen: HomeComponent }
   },
   {
-    initialRouteName: 'MainNav'
+    initialRouteName: 'MainNav',
+    defaultNavigationOptions: {
+      header: (props) => <HeaderComponent {...props} />,
+    }
   }
 );
 
-mainNav.navigationOptions = {
-  header: <HeaderComponent />,
-};
+// mainNav.
 
 const AppNavigator = createAppContainer(createDrawerNavigator({
   Drawer: { screen: mainNav }
